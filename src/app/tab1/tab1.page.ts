@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, NgModule, enableProdMode } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { DxTagBoxModule } from 'devextreme-angular';
+import DataSource from 'devextreme/data/data_source';
+import { FileManagerService, Users } from '../services/file-manager.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +12,21 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  users: Users[];
+
+    constructor(fileManagerService: FileManagerService) {
+      this.users = fileManagerService.getUsers();
+    }
+
+    onMultiTagPreparing(args){
+      const selectedItemsLength = args.selectedItems.length;
+      const totalCount = 5;
+
+      if (selectedItemsLength < totalCount) {
+        args.cancel = true;
+      } else {
+        args.text = 'All selected (' + selectedItemsLength + ')';
+      }
+    }
 
 }

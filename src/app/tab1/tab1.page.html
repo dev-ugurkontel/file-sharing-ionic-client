@@ -13,5 +13,34 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+
+
+
+
+  <div>
+    <div class="dx-fieldset">
+      <div class="dx-field">
+          <div class="dx-field-label">
+              Shared Users
+          </div>
+          <div class="dx-field-value">
+              <dx-tag-box
+                  [items]="users"
+                  [value]="[1, 2, 3]"
+                  displayExpr="name"
+                  valueExpr="id"
+                  [showSelectionControls]="true"
+                  selectAllMode="allPages"
+                  [maxDisplayedTags]="1"
+                  [showMultiTagOnly]="false"
+              ></dx-tag-box>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
 </ion-content>
