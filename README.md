@@ -74,7 +74,7 @@ You may wish to sync your web app with your native project(s) in the following c
 To sync your project, run:
 
 ```bash
-$ npx cap syncv
+$ npx cap sync
 ```
 
 ### Updating Capacitor
