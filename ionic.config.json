@@ -1,0 +1,7 @@
+{
+  "name": "file-sharing-client",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
